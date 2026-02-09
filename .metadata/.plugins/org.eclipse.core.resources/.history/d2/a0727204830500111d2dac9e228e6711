@@ -1,0 +1,48 @@
+package formatTask;
+
+public class FormatTask02 {
+	package formatTask;
+
+	public class FormatTask02 {
+	   public static void main(String[] args) {
+//	      %자릿수d
+//	      %5d
+	      
+//	      국어점수, 영어점수, 수학점수를 받아서 서식에 맞게 출력
+//	      이름: 이규학
+//	      수학:    20점
+//	      국어:    40점
+//	      영어:    15점
+//	      총점:    75점
+		   String name = "";
+		   int math = 0;
+		   int kor = 0;
+		   int eng = 0;
+		   
+		   name = "이규혁"
+		   math = 20 ;
+		   kor = 40;
+		   eng = 15;
+				   
+		   
+		   
+		   
+		   String name = "%s"
+		   int result1 = "%d" ,result2 = "(%d + %d + %d)/3"
+		   System.out.printf(result2)
+	   }
+	}
+}
+
+//식을 완성시키시오.
+//10 + 20 = 30
+//7 * 8 = 56
+//6 * 4 = 24
+int num1 = 10, num2 = 20, num3 = 7, num4 = 8, num5 = 6, num6 = 4;
+String result1 = "%d + %d = %d\n", result2 = "%d * %d = %d\n";
+
+System.out.printf(result1, num1, num2, num1 + num2);
+System.out.printf(result2, num3, num4, num3 * num4);
+System.out.printf(result2, num5, num6, num5 * num6);
+}
+}
