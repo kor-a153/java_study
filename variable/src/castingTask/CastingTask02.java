@@ -6,6 +6,7 @@ public class CastingTask02 {
 //	   1. 스트링을 강제형변환 해서 Int로 (Integer)
 //	   2. 2.59를 int로 강제 형변환
 //	   해서 더하기. result에 담을것.
+	   
 	   int num1 = (int)(Double.parseDouble("8.43"));
 	   
 	   int num2 = (int)2.59;
