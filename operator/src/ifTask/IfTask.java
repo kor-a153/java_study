@@ -37,7 +37,7 @@ public class IfTask {
 		   pepsi*count;
 	   }
 	   else {
-		   maccall*count;
+		   macCall*count;
 	   }
 //      가진돈은 10000
 //	   				결제금액이 10000원 이상이면, 가진돈이 부족합니다. 출력.
