@@ -1,4 +1,4 @@
-package whileTask;
+package whileTest;
 
 // 사용자에게 무한 입력 상태로 
 // 입력 받은 모든 값의 합이 100 이상되면 프로그램이 종료된다.
