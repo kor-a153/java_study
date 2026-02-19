@@ -1,7 +1,0 @@
-package consoleTask;
-
-public class ConsoleTask {
-	System.out.print("1.김치찌개\n");
-	System.out.print("2.치킨공식\n");
-	System.out.print("3.텀블러비어\n");
-}

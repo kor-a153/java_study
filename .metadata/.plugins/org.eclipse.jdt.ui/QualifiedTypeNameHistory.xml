@@ -5,4 +5,6 @@
     <fullyQualifiedTypeName name="methodTask.MethodTask"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="classTask.Sports"/>
+    <fullyQualifiedTypeName name="classTask.Student"/>
 </qualifiedTypeNameHistroy>
