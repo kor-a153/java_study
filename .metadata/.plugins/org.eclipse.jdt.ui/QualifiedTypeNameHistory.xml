@@ -7,4 +7,8 @@
     <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="classTask.Sports"/>
     <fullyQualifiedTypeName name="classTask.Student"/>
+    <fullyQualifiedTypeName name="java.lang.Override"/>
+    <fullyQualifiedTypeName name="inheritanceTask.PersonTask"/>
+    <fullyQualifiedTypeName name="inheritanceTest.Animal2"/>
+    <fullyQualifiedTypeName name="inheritanceTask.Phone"/>
 </qualifiedTypeNameHistroy>
