@@ -19,7 +19,7 @@ public class SwitchTest {
       choice = sc.nextInt();//초이스를 입력 받음.
       
       System.out.println(exampleMessage2);
-      stock = sc.nextInt();
+      stock = sc.nextInt(); // 스톡에 들어갈 값을 입력 받음.
       
       switch(choice) {
       case 1:
