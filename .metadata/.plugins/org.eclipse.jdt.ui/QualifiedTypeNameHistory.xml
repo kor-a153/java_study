@@ -22,4 +22,12 @@
     <fullyQualifiedTypeName name="interfaceTask.Human"/>
     <fullyQualifiedTypeName name="interfaceTask.HumanAdapter"/>
     <fullyQualifiedTypeName name="interfaceTask1.PersonAction"/>
+    <fullyQualifiedTypeName name="interfaceTest2.Animal"/>
+    <fullyQualifiedTypeName name="interfaceTest2.HabiboreMarker"/>
+    <fullyQualifiedTypeName name="interfaceTest2.CarniboreMarker"/>
+    <fullyQualifiedTypeName name="interfaceTest2.InterfaceTest2"/>
+    <fullyQualifiedTypeName name="anonymousTest.Study"/>
+    <fullyQualifiedTypeName name="anonymousTask1.Starbucks"/>
+    <fullyQualifiedTypeName name="anonymousTask1.EventMarker"/>
+    <fullyQualifiedTypeName name="java.lang.FunctionalInterface"/>
 </qualifiedTypeNameHistroy>
