@@ -27,7 +27,6 @@
     <fullyQualifiedTypeName name="anonymousTest.Study"/>
     <fullyQualifiedTypeName name="anonymousTask1.Starbucks"/>
     <fullyQualifiedTypeName name="anonymousTask1.EventMarker"/>
-    <fullyQualifiedTypeName name="java.lang.FunctionalInterface"/>
     <fullyQualifiedTypeName name="lambdaTask4.GuGuDan"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="javax.print.DocFlavor.STRING"/>
@@ -40,4 +39,10 @@
     <fullyQualifiedTypeName name="exceptionTest.BadWordException"/>
     <fullyQualifiedTypeName name="arrayList.Task.DBConnecter"/>
     <fullyQualifiedTypeName name="arrayList.Task.UserField"/>
+    <fullyQualifiedTypeName name="hashset.test.HashSetTest"/>
+    <fullyQualifiedTypeName name="java.lang.Object"/>
+    <fullyQualifiedTypeName name="java.util.Map.Entry"/>
+    <fullyQualifiedTypeName name="java.util.Iterator"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="java.lang.FunctionalInterface"/>
 </qualifiedTypeNameHistroy>
