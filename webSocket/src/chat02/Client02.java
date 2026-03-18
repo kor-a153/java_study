@@ -22,21 +22,22 @@ public class Client02 {
             BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
             Scanner sc = new Scanner(System.in);
       ){
-         
          System.out.println("서버가 연결되었습니다.");
-         
+//         while 반복문으로 서버에 메세지를 보낼수 있게 한다.
          while(true) {
             System.out.println("서버로 메세지 보내기 >>");
             clientMessage = sc.nextLine();
+//          메세지 받아서 버퍼에 넣음
             bufferedWriter.write(clientMessage + "\n");
+//          버퍼에 쌓은걸 flush로 밀어줌.
             bufferedWriter.flush();
             System.out.println("[클라이언트]: " + clientMessage);
             
+//          서버에서 받은 메세지.
             serverMessage = bufferedReader.readLine();
             System.out.println("[서버]: " + serverMessage);
          }
-         
-         
+//         에러 발생시. catch로	
       } catch (IOException e) {
          e.printStackTrace();
       }

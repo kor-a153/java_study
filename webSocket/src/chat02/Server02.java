@@ -17,6 +17,8 @@ public class Server02 {
       try(
          ServerSocket serverSocket = new ServerSocket(1100);
          Socket socket = serverSocket.accept();
+//    		 접속 받는거 기다림
+    		  
          BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
          BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
          Scanner sc = new Scanner(System.in);
@@ -30,7 +32,7 @@ public class Server02 {
             bufferedWriter.write(serverMessage + "\n");
             bufferedWriter.flush();
             System.out.println("[서버]: " + serverMessage);
-            
+//			클라이언트가 보낸 메세지 출력.            
             clientMessage = bufferedReader.readLine();
             System.out.println("[클라이언트]: " + clientMessage);
          }
