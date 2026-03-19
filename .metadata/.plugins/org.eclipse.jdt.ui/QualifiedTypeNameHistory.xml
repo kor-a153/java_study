@@ -57,7 +57,7 @@
     <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
     <fullyQualifiedTypeName name="chatting.ClientThread"/>
     <fullyQualifiedTypeName name="java.sql.DriverManager"/>
+    <fullyQualifiedTypeName name="dao.MemberDAO"/>
     <fullyQualifiedTypeName name="dao.DBConnecter"/>
     <fullyQualifiedTypeName name="vo.MemberVO"/>
-    <fullyQualifiedTypeName name="dao.MemberDAO"/>
 </qualifiedTypeNameHistroy>

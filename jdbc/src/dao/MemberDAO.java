@@ -4,8 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-import javax.naming.ldap.PagedResultsControl;
+import java.util.ArrayList;
 
 import vo.MemberVO;
 
@@ -91,8 +90,36 @@ public class MemberDAO {
       
    }
    
-   
-   
+//   마이페이지
+   public MemberVO findById() {
+//      단, 패스워드는 *절대 화면으로 가져오면 안된다.
+      String query = "SELECT ID, MEMBER_EMAIL, MEMBER_PASSWORD, MEMBER_ADDRESS, MEMBER_RECOMMENDER_EMAIL "
+            + "FROM TBL_MEMBER "
+            + "WHERE ID = ?";
+      
+      MemberVO memberVO = new MemberVO();
+      connection = DBConnecter.getConnect();
+      
+      try {
+         preparedStatement = connection.prepareStatement(query);
+         preparedStatement.setLong(1, session);
+         
+         resultSet = preparedStatement.executeQuery();
+         resultSet.next();
+         
+         memberVO.setId(resultSet.getLong("ID"));
+         memberVO.setMemberEmail(resultSet.getString("MEMBER_EMAIL"));
+         memberVO.setMemberPassword(resultSet.getString("MEMBER_PASSWORD"));
+         memberVO.setMemberAddress(resultSet.getString("MEMBER_ADDRESS"));
+         memberVO.setMemberRecommenderEmail(resultSet.getString("MEMBER_RECOMMENDER_EMAIL"));
+         
+      } catch (SQLException e) {
+         // TODO Auto-generated catch block
+         e.printStackTrace();
+      }
+      
+      return memberVO;
+   }
    
 //   정보수정
    public void update(MemberVO memberVO) {
@@ -114,28 +141,105 @@ public class MemberDAO {
       } finally {
          this.closeResources();
       }
+   }
+   
+//   새로운 비밀번호 변경
+   public boolean changePassword(String newPassword) {
+      String query = "UPDATE TBL_MEMBER "
+            + "SET MEMBER_PASSWORD = ? "
+            + "WHERE ID = ?";
+      connection = DBConnecter.getConnect();
+      boolean isUpdate = false;
       
+      try {
+         preparedStatement = connection.prepareStatement(query);
+         preparedStatement.setString(1, newPassword);
+         preparedStatement.setLong(2, session);
+         
+         preparedStatement.executeUpdate();
+         isUpdate = true;
+         
+      } catch (SQLException e) {
+         // TODO Auto-generated catch block
+         e.printStackTrace();
+      }finally {
+         this.closeResources();
+      }
       
-      
+      return isUpdate;
       
    }
+   
+//   회원탈퇴
+   public boolean withdraw() {
+      String query = "DELETE FROM TBL_MEMBER WHERE ID = ?";
+      boolean isWithDraw = false;
+      connection = DBConnecter.getConnect();
+      
+      try {
+         preparedStatement = connection.prepareStatement(query);
+         preparedStatement.setLong(1, session);
+         
+         preparedStatement.executeUpdate();
+         isWithDraw = true;
+         
+      } catch (SQLException e) {
+         // TODO Auto-generated catch block
+         e.printStackTrace();
+      }
+      
+      return isWithDraw;
+      
+   }
+   
+//   로그아웃
+   public void logout() {
+      session = null;
+   }
+   
+//   나를 추천한 사람 전체 조회
+   public ArrayList<MemberVO> getRecommenders() {
+      String query = "SELECT ID, MEMBER_EMAIL, MEMBER_PASSWORD, MEMBER_ADDRESS, MEMBER_RECOMMENDER_EMAIL "
+            + "FROM TBL_MEMBER "
+            + "WHERE MEMBER_RECOMMENDER_EMAIL = (SELECT MEMBER_EMAIL FROM TBL_MEMBER WHERE ID = ?)";
+      
+      connection = DBConnecter.getConnect();
+      ArrayList<MemberVO> members = new ArrayList<MemberVO>();
+      
+      try {
+         preparedStatement = connection.prepareStatement(query);
+         preparedStatement.setLong(1, session);
+         resultSet = preparedStatement.executeQuery();
+         
+         while(resultSet.next()) {
+            MemberVO memberVO = new MemberVO();
+            memberVO.setId(resultSet.getLong("ID"));
+            memberVO.setMemberEmail(resultSet.getString("MEMBER_EMAIL"));
+            memberVO.setMemberPassword(resultSet.getString("MEMBER_PASSWORD"));
+            memberVO.setMemberAddress(resultSet.getString("MEMBER_ADDRESS"));
+            memberVO.setMemberRecommenderEmail(resultSet.getString("MEMBER_RECOMMENDER_EMAIL"));
+            
+            members.add(memberVO);
+         }
+         
+      } catch (SQLException e) {
+         // TODO Auto-generated catch block
+         e.printStackTrace();
+      } finally {
+         this.closeResources();
+      }
+      
+      return members;
+      
+   }
+   
+// 내가 추천한 추천인 조회
+   
    
    
    
    
    
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 

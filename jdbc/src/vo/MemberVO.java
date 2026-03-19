@@ -3,18 +3,24 @@ package vo;
 import java.util.Objects;
 
 public class MemberVO {
-   //1. private
-   //2. 기본 생성자, 초기화 생성자
-   //3. getter, setter
-   //4. toString, hashCode, equals 재정의
-   private Long id;
-   private String memberEmail;
-   private String memberPassword;
-   private String memberAddress;
-   private String memberRecommenderEmail;
-   
-   public MemberVO() {;}
-
+//   1. private
+//   2. 기본 생성자, 초기화 생성자
+//   3. getter, setter
+//   4. toString, hashCode, equals 재정의
+//   구성 시작!
+    private Long id;
+    private String memberEmail;
+    private String memberPassword;
+    private String memberAddress;
+    private String memberRecommenderEmail;
+    
+    public MemberVO() {;}
+    public MemberVO(String memberEmail, String memberPassword, String memberAddress) {
+       this.memberEmail = memberEmail;
+       this.memberPassword = memberPassword;
+       this.memberAddress = memberAddress;
+    }
+    
    public MemberVO(Long id, String memberEmail, String memberPassword, String memberAddress,
          String memberRecommenderEmail) {
       super();
@@ -87,6 +93,5 @@ public class MemberVO {
       MemberVO other = (MemberVO) obj;
       return Objects.equals(id, other.id);
    }
-   
    
 }
